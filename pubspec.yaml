@@ -38,6 +38,8 @@ dependencies:
 
   flutter_naver_map: ^0.10.7
 
+  dio: ^5.0.0
+
   camera:
     git:
       url: https://github.com/flutter/plugins
