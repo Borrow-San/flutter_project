@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/screen/2_login.dart';
 import 'package:flutter_project/widgets/basic_button.dart';
 import 'package:flutter_project/widgets/input_box.dart';
 import 'package:flutter_project/widgets/logo.dart';
@@ -59,7 +58,12 @@ class SignUp extends StatelessWidget {
             ),
             BasicButton(
               buttonTitle: "회원가입",
-              page: Login(),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignUp(),
+                ),
+              ),
             ),
           ],
         ),

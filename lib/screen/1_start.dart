@@ -30,11 +30,21 @@ class Start extends StatelessWidget {
               ),
               BasicButton(
                 buttonTitle: "로그인",
-                page: Login(),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Login(),
+                  ),
+                ),
               ),
               BasicButton(
                 buttonTitle: "회원가입",
-                page: SignUp(),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SignUp(),
+                  ),
+                ),
               ),
               SizedBox(
                 height: 50.0,
