@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 class InputBox extends StatelessWidget {
-  final ValueChanged<String>? onChanged;
+  final FormFieldSetter<String> onSaved;
 
   final GestureTapCallback? onTap;
   final String hintText;
+  final String? labelText;
+  final String isValidatorValueEmpty;
 
   const InputBox({
     Key? key,
     required this.hintText,
     this.onTap,
-    this.onChanged,
+    this.labelText,
+    required this.onSaved,
+    required this.isValidatorValueEmpty,
   }) : super(key: key);
 
   @override
@@ -18,7 +22,7 @@ class InputBox extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(2.5),
       child: TextFormField(
-        onChanged: onChanged,
+        onSaved: onSaved,
         onTap: onTap,
         maxLines: 1,
         decoration: InputDecoration(
@@ -28,8 +32,16 @@ class InputBox extends StatelessWidget {
               borderRadius: BorderRadius.circular(12.0),
               borderSide: BorderSide.none),
           hintText: hintText,
+          labelText: labelText,
           contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0),
         ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return isValidatorValueEmpty;
+          } else {
+            return null;
+          }
+        },
       ),
     );
   }

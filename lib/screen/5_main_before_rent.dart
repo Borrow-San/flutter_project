@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:flutter_project/screen/6_scan.dart';
+import 'package:flutter_project/widgets/logout_button.dart';
 
 class MainBfRent extends StatefulWidget {
   const MainBfRent({Key? key}) : super(key: key);
@@ -77,6 +78,7 @@ class _MainBfRentState extends State<MainBfRent> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           children: [
@@ -90,6 +92,7 @@ class _MainBfRentState extends State<MainBfRent> {
                             Text('고객센터'),
                           ],
                         ),
+                        LogoutButton(),
                       ],
                     ),
                     ElevatedButton(

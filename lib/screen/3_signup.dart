@@ -22,13 +22,19 @@ class SignUp extends StatelessWidget {
           children: [
             Logo(),
             InputBox(
+              labelText: "이름",
+              onSaved: (value) {},
               hintText: "이름",
+              isValidatorValueEmpty: "이름을 입력해 주세요",
             ),
             Row(
               children: [
                 Flexible(
                   child: InputBox(
+                    labelText: "이메일",
+                    onSaved: (value) {},
                     hintText: "이메일",
+                    isValidatorValueEmpty: "이메일을 입력해 주세요",
                   ),
                 ),
                 DuplicateCheckButton(),
@@ -38,17 +44,26 @@ class SignUp extends StatelessWidget {
               children: [
                 Flexible(
                   child: InputBox(
+                    labelText: "아이디",
+                    onSaved: (value) {},
                     hintText: "아이디",
+                    isValidatorValueEmpty: "아이디를 입력해 주세요",
                   ),
                 ),
                 DuplicateCheckButton(),
               ],
             ),
             InputBox(
+              labelText: "비밀번호",
+              onSaved: (value) {},
               hintText: "비밀번호",
+              isValidatorValueEmpty: "비밀번호를 입력해 주세요",
             ),
             InputBox(
+              labelText: "비밀번호 확인",
+              onSaved: (value) {},
               hintText: "비밀번호 확인",
+              isValidatorValueEmpty: "비밀번호를 한번 더 입력해 주세요",
             ),
             Row(
               children: [

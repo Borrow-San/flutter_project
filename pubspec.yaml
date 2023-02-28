@@ -48,7 +48,8 @@ dependencies:
 
   qr_code_scanner: ^1.0.1
 
-  flutter_keyboard_size: ^1.0.1
+  # 로그인 시 토큰 저장
+  flutter_secure_storage: ^8.0.0
 
 dev_dependencies:
   flutter_test:

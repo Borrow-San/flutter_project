@@ -17,6 +17,7 @@ import 'package:flutter_project/screen/6_scan.dart';
 import 'package:flutter_project/screen/7_code_input.dart';
 import 'package:flutter_project/screen/8_main_during_rent.dart';
 import 'package:flutter_project/screen/9_umb_pohto.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
