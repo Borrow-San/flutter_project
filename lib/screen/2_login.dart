@@ -44,6 +44,7 @@ class _LoginState extends State<Login> {
               children: [
                 showLogo(),
                 InputBox(
+                  obscureText: false,
                   onSaved: (value) {
                     email = value;
                   },
@@ -59,6 +60,7 @@ class _LoginState extends State<Login> {
                   height: 10.0,
                 ),
                 InputBox(
+                  obscureText: true,
                   onSaved: (value) {
                     password = value;
                   },

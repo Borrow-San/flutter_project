@@ -7,6 +7,7 @@ class InputBox extends StatelessWidget {
   final String hintText;
   final String? labelText;
   final String isValidatorValueEmpty;
+  final bool obscureText;
 
   const InputBox({
     Key? key,
@@ -15,6 +16,7 @@ class InputBox extends StatelessWidget {
     this.labelText,
     required this.onSaved,
     required this.isValidatorValueEmpty,
+    required this.obscureText,
   }) : super(key: key);
 
   @override
@@ -42,6 +44,7 @@ class InputBox extends StatelessWidget {
             return null;
           }
         },
+        obscureText: obscureText,
       ),
     );
   }
