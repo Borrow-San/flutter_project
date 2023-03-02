@@ -9,6 +9,7 @@ import 'package:flutter_project/screen/5_main_before_rent.dart';
 import 'package:flutter_project/widgets/basic_button.dart';
 import 'package:flutter_project/widgets/input_box.dart';
 import 'package:flutter_project/widgets/logo.dart';
+import 'package:flutter_project/widgets/show_logo.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class Login extends StatefulWidget {
@@ -42,7 +43,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                showLogo(),
+                showLogo(logoAppear),
                 InputBox(
                   obscureText: false,
                   onSaved: (value) {
@@ -121,23 +122,6 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
-  }
-
-  Widget showLogo() {
-    if (logoAppear) {
-      return Column(
-        children: [
-          Logo(),
-          SizedBox(
-            height: 50.0,
-          ),
-        ],
-      );
-    } else {
-      return SizedBox(
-        height: 20.0,
-      );
-    }
   }
 
   void onLoginPressed() async {
