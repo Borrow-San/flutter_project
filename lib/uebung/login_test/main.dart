@@ -82,7 +82,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       if (snapshot.data != null) {
                         Map logoutInfo = {"token": snapshot.data!['token']};
                         Dio().post(
-                          'http://10.0.2.2:8000/users/logout',
+                          // 로컬 애뮬레이터 주소
+                          //'http://10.0.2.2:8000/users/logout',
+                          // 서버 IP 주소
+                          'http://192.168.0.22:8000/users/logout',
                           data: jsonEncode(logoutInfo),
                         );
                         setState(
@@ -117,7 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
       formKey.currentState!.save();
       Map loginInfo = {'email': email, 'password': password};
       final response = await Dio().post(
-        'http://10.0.2.2:8000/users/login',
+        // 로컬 애뮬레이터 주소
+        //'http://10.0.2.2:8000/users/login',
+        // 서버 IP 주소
+        'http://192.168.0.22:8000/users/login',
         data: jsonEncode(loginInfo),
       );
       if (response.data['msg'] == null) {

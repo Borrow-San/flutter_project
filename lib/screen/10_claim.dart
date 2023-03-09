@@ -22,10 +22,15 @@ class Claim extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ExpansionTile(
+              children: [
+                Text("회원정보 관련", style: TextStyle(fontSize: 20)),
+                Text("결제 관련", style: TextStyle(fontSize: 20)),
+                Text("대여 관련", style: TextStyle(fontSize: 20)),
+              ],
               collapsedBackgroundColor: Colors.white,
               collapsedShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50.0),
-                side: BorderSide(color: Colors.black),
+                side: BorderSide(color: Colors.white),
               ),
               title: Text(
                 "오류 유형",
