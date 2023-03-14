@@ -67,6 +67,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text("Send Image"),
           ),
           previewPhoto(),
+          ElevatedButton(
+            onPressed: () {
+              putImage(tokenPthoto);
+            },
+            child: Text("putImage"),
+          ),
         ],
       ),
     );
@@ -100,15 +106,30 @@ class _HomeScreenState extends State<HomeScreen> {
             "file": MultipartFile.fromFileSync(input.path)
           }).runtimeType}");
       var response = await Dio().post(
-        //'http://10.0.2.2:8000/articles/uploadfile/',
-        'http://192.168.0.22:8000/yolotest2',
+        'http://10.0.2.2:8000/articles/uploadfile/',
+        //'http://192.168.0.22:8000/yolotest2',
         data: FormData.fromMap(
-            {"file": MultipartFile.fromFileSync(input.path)},
-          ),
+          {"file": MultipartFile.fromFileSync(input.path)},
+        ),
       );
       print('성공적으로 업로드했습니다');
       print(response.data);
       return response.data;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void putImage(input) async {
+    print("사진을 아마존 S3에 업로드 합니다.");
+    try {
+      var response = await Dio().put(
+        'http://borrowsan-test-bucket.s3-website.ap-northeast-2.amazonaws.com/${input.name}',
+        data: FormData.fromMap(
+          {"file": MultipartFile.fromFileSync(input.path)},
+        ),
+      );
+      print(response.data);
     } catch (e) {
       print(e);
     }
